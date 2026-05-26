@@ -52,6 +52,35 @@ function App() {
         </div>
       </section>
 
+      {/* ========== Stats / Metrics Section (Dark) ========== */}
+      <section className="section section-dark" id="stats">
+        <div className="section-inner">
+          <p className="section-label">Resultados</p>
+          <h2 className="section-title">Números que falam por si</h2>
+          <div className="stats-grid">
+            <div className="stat-item">
+              <span className="stat-number">+250</span>
+              <span className="stat-label">Projetos Entregues</span>
+            </div>
+            <div className="stat-divider"></div>
+            <div className="stat-item">
+              <span className="stat-number">98%</span>
+              <span className="stat-label">Satisfação dos Clientes</span>
+            </div>
+            <div className="stat-divider"></div>
+            <div className="stat-item">
+              <span className="stat-number">+50</span>
+              <span className="stat-label">Prêmios de Design</span>
+            </div>
+            <div className="stat-divider"></div>
+            <div className="stat-item">
+              <span className="stat-number">12</span>
+              <span className="stat-label">Anos de Experiência</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* ========== Portfolio Section (Light) ========== */}
       <section className="section section-light" id="portfolio">
         <div className="section-inner">
@@ -132,6 +161,54 @@ function App() {
         </div>
       </section>
 
+      {/* ========== Testimonials Section (Light) ========== */}
+      <section className="section section-light" id="depoimentos">
+        <div className="section-inner">
+          <p className="section-label">Depoimentos</p>
+          <h2 className="section-title">O que nossos clientes dizem</h2>
+          <p className="section-subtitle">
+            A confiança de quem já trabalhou conosco é o nosso maior patrimônio.
+          </p>
+          <div className="testimonials-grid">
+            {[
+              {
+                name: 'Carlos Mendes',
+                role: 'CEO, TechVentures',
+                text: 'A PortfolioPro transformou completamente nossa presença digital. O redesign do nosso app resultou em um aumento de 40% na retenção de usuários.',
+                avatar: 'CM',
+                color: '#0071e3',
+              },
+              {
+                name: 'Juliana Alves',
+                role: 'CMO, BrandHouse',
+                text: 'Trabalhar com essa equipe foi uma experiência incrível. Entregaram um site que superou todas as expectativas, com performance impecável e design deslumbrante.',
+                avatar: 'JA',
+                color: '#34c759',
+              },
+              {
+                name: 'Roberto Lima',
+                role: 'Founder, StartUpLab',
+                text: 'Precisávamos de um MVP em tempo recorde e eles entregaram em 3 semanas. Qualidade, agilidade e profissionalismo em cada detalhe.',
+                avatar: 'RL',
+                color: '#ff9500',
+              },
+            ].map((t, i) => (
+              <div className="testimonial-card" key={i}>
+                <div className="testimonial-stars">{'★★★★★'.split('').map((s, j) => <span key={j}>{s}</span>)}</div>
+                <p className="testimonial-text">"{t.text}"</p>
+                <div className="testimonial-author">
+                  <div className="testimonial-avatar" style={{ background: t.color }}>{t.avatar}</div>
+                  <div>
+                    <div className="testimonial-name">{t.name}</div>
+                    <div className="testimonial-role">{t.role}</div>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* ========== Team Section (Light) ========== */}
       <section className="section section-light" id="equipe">
         <div className="section-inner">
@@ -161,6 +238,39 @@ function App() {
         </div>
       </section>
 
+      {/* ========== Process Section (White) ========== */}
+      <section className="section section-white" id="processo">
+        <div className="section-inner">
+          <p className="section-label">Processo</p>
+          <h2 className="section-title">Como trabalhamos</h2>
+          <p className="section-subtitle">
+            Metodologia ágil e transparente, do briefing ao lançamento.
+          </p>
+          <div className="process-grid">
+            <div className="process-step">
+              <div className="process-step-number">1</div>
+              <h3 className="process-step-title">Descoberta</h3>
+              <p className="process-step-desc">Entendemos seu negócio, público-alvo e objetivos para alinhar expectativas.</p>
+            </div>
+            <div className="process-step">
+              <div className="process-step-number">2</div>
+              <h3 className="process-step-title">Estratégia</h3>
+              <p className="process-step-desc">Definimos roadmap, arquitetura de informação e wireframes interativos.</p>
+            </div>
+            <div className="process-step">
+              <div className="process-step-number">3</div>
+              <h3 className="process-step-title">Design & Dev</h3>
+              <p className="process-step-desc">Criamos protótipos de alta fidelidade e desenvolvemos com entregas contínuas.</p>
+            </div>
+            <div className="process-step">
+              <div className="process-step-number">4</div>
+              <h3 className="process-step-title">Lançamento</h3>
+              <p className="process-step-desc">Testes rigorosos, deploy e acompanhamento pós-lançamento com métricas.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* ========== CTA Section (Dark) ========== */}
       <section className="cta-section" id="contato">
         <div className="section-inner">
@@ -171,6 +281,40 @@ function App() {
           <a href="mailto:ola@portfoliopro.com" className="cta-btn">
             Iniciar projeto
           </a>
+        </div>
+      </section>
+
+      {/* ========== Contact Form Section (White) ========== */}
+      <section className="section section-white" id="contato-form">
+        <div className="section-inner">
+          <p className="section-label">Contato</p>
+          <h2 className="section-title">Vamos conversar</h2>
+          <p className="section-subtitle">
+            Preencha o formulário abaixo e nossa equipe entrará em contato em até 24 horas.
+          </p>
+          <div className="contact-form-wrapper">
+            <form className="contact-form" onSubmit={(e) => e.preventDefault()}>
+              <div className="form-row">
+                <div className="form-group">
+                  <label className="form-label" htmlFor="name">Nome</label>
+                  <input className="form-input" id="name" type="text" placeholder="Seu nome" />
+                </div>
+                <div className="form-group">
+                  <label className="form-label" htmlFor="email">Email</label>
+                  <input className="form-input" id="email" type="email" placeholder="seu@email.com" />
+                </div>
+              </div>
+              <div className="form-group">
+                <label className="form-label" htmlFor="subject">Assunto</label>
+                <input className="form-input" id="subject" type="text" placeholder="Como podemos ajudar?" />
+              </div>
+              <div className="form-group">
+                <label className="form-label" htmlFor="message">Mensagem</label>
+                <textarea className="form-textarea" id="message" placeholder="Conte-nos sobre seu projeto..." />
+              </div>
+              <button type="submit" className="form-submit">Enviar mensagem</button>
+            </form>
+          </div>
         </div>
       </section>
 
